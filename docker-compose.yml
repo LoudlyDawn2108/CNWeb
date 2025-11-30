@@ -1,14 +1,15 @@
 services:
   db:
-    image: postgres:13
+    container_name: CNWeb
+    image: mcr.microsoft.com/mssql/server:2022-latest
     environment:
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: mydatabase
+      SA_PASSWORD: MyStrong!Passw0rd
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1434:1433"
     volumes:
-      - db_data:/var/lib/postgresql/data
-    networks:
-      - backend
+      - cnweb_data:/var/lib/mssql/cnweb_data
 
 volumes:
-  db_data: {}
+  cnweb_data:
+    driver: local
