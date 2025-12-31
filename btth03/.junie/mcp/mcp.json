@@ -1,0 +1,11 @@
+{
+    "mcpServers": {
+        "laravel-boost": {
+            "command": "/usr/bin/php",
+            "args": [
+                "/mnt/windows_data/Code/php/CNWeb/btth03/artisan",
+                "boost:mcp"
+            ]
+        }
+    }
+}
